@@ -11,9 +11,6 @@ const ListView = (props) => {
             <ul className='categories-list'>
                 {props.lists[0].categories.map((c, index) => <li key={c.id}>{index + 1}) {c.name}</li>)}
             </ul>
-
-
-
         </div>
         : 
         <div>
