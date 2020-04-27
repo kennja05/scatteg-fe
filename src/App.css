@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+.game-container{
+  display: flex;
+}
+
+.list-view{
+  border-style: solid;
+  height: 50vh;
+  width: 20vw;
+}
+
+.categories-list{
+  text-align: left;
+  font-size: large;
+}

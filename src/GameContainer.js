@@ -16,7 +16,9 @@ export default class GameContainer extends React.Component {
 
     render(){
         return(
-            <ListView list={this.state.list} loaded={this.state.loaded}/>
+            <div className='game-container'>
+                <ListView list={this.state.list} loaded={this.state.loaded}/>
+            </div>
         )
     }
 
