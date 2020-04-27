@@ -4,7 +4,7 @@ export default class ThirdRound extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className='round'>
                 <h1>Round 3</h1>
                 <InputForm />
             </div>

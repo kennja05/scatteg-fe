@@ -57,3 +57,8 @@
   flex-direction: column;
   font-size: large;
 }
+
+.round{
+  width: 25vw;
+  border-style: solid;
+}

@@ -4,7 +4,7 @@ export default class FirstRound extends React.Component {
 
     render(){
         return(
-            <div>
+            <div className='round'>
                 <h1>Round 1</h1>
                 <InputForm />
             </div>
