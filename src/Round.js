@@ -1,9 +1,9 @@
 import React from 'react'
 import InputForm from './InputForm'
-export default class SecondRound extends React.Component {
+export default class Round extends React.Component {
 
     state={
-        inputs: {
+        inputs: { //there's gotta be a better way...
             first: '',
             second: '',
             third: '',
@@ -28,7 +28,7 @@ export default class SecondRound extends React.Component {
     render(){
         return(
             <div className='round'>
-                <h1>Round 2</h1>
+                <h1>Round {this.props.roundNumber}</h1>
                 <InputForm handleChange={this.handleChange}/>
             </div>
         )
