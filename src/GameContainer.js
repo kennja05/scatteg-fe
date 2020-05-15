@@ -15,6 +15,10 @@ export default class GameContainer extends React.Component {
             .then(lists=> this.setState({listArray: lists, loaded: true}))
     }
 
+    createRounds = () => {
+        return ['1', '2', '3'].map(num => <Round roundNumber={num} generateRandomLetter={this.generateRandomLetter}/>) 
+    }
+
     generateRandomLetter = () => {
         const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W']
         const randIndex = Math.floor(Math.random() * 21)
@@ -25,9 +29,8 @@ export default class GameContainer extends React.Component {
         return(
             <div className='game-container'>
                 <ListView lists={this.state.listArray} loaded={this.state.loaded}/>
-                <Round roundNumber={'1'} generateRandomLetter={this.generateRandomLetter}/>
-                <Round roundNumber={'2'} generateRandomLetter={this.generateRandomLetter}/>
-                <Round roundNumber={'3'} generateRandomLetter={this.generateRandomLetter}/>
+                {/* sets up three separate rounds */}
+                {this.createRounds()} 
             </div>
         )
     }
