@@ -6,7 +6,7 @@ export default class InputForm extends React.Component {
 
     render(){
         return(
-            <form exportEnabled='true' className='input-form'>
+            <form className='input-form'>
                 <div>
                     <label>1)  </label>
                     <input type='text' />   

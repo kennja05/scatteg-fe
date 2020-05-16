@@ -2,7 +2,6 @@ import React from 'react'
 
 const ListView = (props) => {
     
-    console.log(props)
     return(
         
         props.loaded ? 

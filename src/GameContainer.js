@@ -16,7 +16,7 @@ export default class GameContainer extends React.Component {
     }
 
     createRounds = () => {
-        return ['1', '2', '3'].map(num => <Round roundNumber={num} letter={this.generateRandomLetter()}/>) 
+        return ['1', '2', '3'].map(num => <Round key={parseInt(num)} roundNumber={num} letter={this.generateRandomLetter()}/>) 
     }
 
     generateRandomLetter = () => {
