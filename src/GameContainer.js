@@ -1,12 +1,14 @@
 import React from 'react'
 import ListView from './ListView'
 import Round from './Round'
+import Stopwatch from './Stopwatch'
 
 export default class GameContainer extends React.Component {
 
     state = {
         listArray: undefined, 
-        loaded: false
+        loaded: false,
+        time: 270
     }
 
     componentDidMount(){
@@ -27,11 +29,13 @@ export default class GameContainer extends React.Component {
     }
 
     render(){
+        console.log(this.state.time)
         return(
             <div className='game-container'>
                 <ListView lists={this.state.listArray} loaded={this.state.loaded}/>
                 {/* sets up three separate rounds */}
                 {this.createRounds()} 
+                <Stopwatch />
             </div>
         )
     }
