@@ -28,7 +28,7 @@ export default class Round extends React.Component {
     render(){
         return(
             <div className='round'>
-                <h1>Round {this.props.roundNumber}</h1>
+                <h1>Round {this.props.roundNumber} - {this.props.letter}</h1>
                 <InputForm handleChange={this.handleChange}/>
             </div>
         )

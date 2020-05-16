@@ -16,10 +16,11 @@ export default class GameContainer extends React.Component {
     }
 
     createRounds = () => {
-        return ['1', '2', '3'].map(num => <Round roundNumber={num} generateRandomLetter={this.generateRandomLetter}/>) 
+        return ['1', '2', '3'].map(num => <Round roundNumber={num} letter={this.generateRandomLetter()}/>) 
     }
 
     generateRandomLetter = () => {
+        const myArr = []
         const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W']
         const randIndex = Math.floor(Math.random() * 21)
         return letters[randIndex]

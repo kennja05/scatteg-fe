@@ -43,7 +43,7 @@
 
 .list-view{
   border-style: solid;
-  height: 50vh;
+  /* height: 50vh; */
   width: 20vw;
 }
 
@@ -59,6 +59,6 @@
 }
 
 .round{
-  width: 25vw;
+  width: 20vw;
   border-style: solid;
 }
