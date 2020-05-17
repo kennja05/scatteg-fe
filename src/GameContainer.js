@@ -7,8 +7,7 @@ export default class GameContainer extends React.Component {
 
     state = {
         listArray: undefined, 
-        loaded: false,
-        time: 270
+        loaded: false
     }
 
     componentDidMount(){
@@ -22,20 +21,18 @@ export default class GameContainer extends React.Component {
     }
 
     generateRandomLetter = () => {
-        const myArr = []
         const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W']
         const randIndex = Math.floor(Math.random() * 21)
         return letters[randIndex]
     }
 
     render(){
-        console.log(this.state.time)
         return(
             <div className='game-container'>
                 <ListView lists={this.state.listArray} loaded={this.state.loaded}/>
                 {/* sets up three separate rounds */}
                 {this.createRounds()} 
-                <Stopwatch />
+                <Stopwatch initialTime={270000}/>
             </div>
         )
     }
