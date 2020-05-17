@@ -7,7 +7,8 @@ export default class GameContainer extends React.Component {
 
     state = {
         listArray: undefined, 
-        loaded: false
+        loaded: false,
+        round: '1'
     }
 
     componentDidMount(){
@@ -17,7 +18,7 @@ export default class GameContainer extends React.Component {
     }
 
     createRounds = () => {
-        return ['1', '2', '3'].map(num => <Round key={parseInt(num)} roundNumber={num} letter={this.generateRandomLetter()}/>) 
+        return ['1', '2', '3'].map(num => <Round enabled={this.state.round === num} key={num} roundNumber={num} letter={this.generateRandomLetter()}/>) 
     }
 
     generateRandomLetter = () => {

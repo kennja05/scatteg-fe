@@ -29,7 +29,7 @@ export default class Round extends React.Component {
         return(
             <div className='round'>
                 <h1>Round {this.props.roundNumber} - {this.props.letter}</h1>
-                <InputForm handleChange={this.handleChange}/>
+                <InputForm enabled={this.props.enabled} handleChange={this.handleChange}/>
             </div>
         )
     }
