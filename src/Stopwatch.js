@@ -4,6 +4,7 @@ import React from 'react'
 export default class Stopwatch extends React.Component {
 
     render() {
+        console.log(this.props)
         return (
             <div className='timer'>
                 <Timer 
@@ -13,7 +14,7 @@ export default class Stopwatch extends React.Component {
                     checkpoints={[
                         {
                             time: this.props.initialTime - 10000,
-                            callback: () => console.log('Checkpoint A'),
+                            callback: () => this.props.incrementRound(),
                         },
                         {
                             time: this.props.initialTime - 20000,

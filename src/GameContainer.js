@@ -21,6 +21,13 @@ export default class GameContainer extends React.Component {
         return ['1', '2', '3'].map(num => <Round enabled={this.state.round === num} key={num} roundNumber={num} letter={this.generateRandomLetter()}/>) 
     }
 
+    incrementRound = () => {
+        const newRound = parseInt(this.state.round) + 1
+        this.setState({
+            round: newRound.toString()
+        })
+    }
+
     generateRandomLetter = () => {
         const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'R', 'S', 'T', 'W']
         const randIndex = Math.floor(Math.random() * 21)
@@ -33,7 +40,7 @@ export default class GameContainer extends React.Component {
                 <ListView lists={this.state.listArray} loaded={this.state.loaded}/>
                 {/* sets up three separate rounds */}
                 {this.createRounds()} 
-                <Stopwatch initialTime={270000}/>
+                <Stopwatch incrementRound={this.incrementRound} initialTime={270000}/>
             </div>
         )
     }
