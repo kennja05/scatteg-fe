@@ -28,7 +28,7 @@ export default class Round extends React.Component {
     render(){
         return(
             <div className='round'>
-                <h1>Round {this.props.roundNumber} - {this.props.enabled ? this.props.letter : "N/A"}</h1>
+                <h1>Round {this.props.roundNumber} - {this.props.showLetter ? this.props.letter : "N/A"}</h1>
                 <InputForm enabled={this.props.enabled} handleChange={this.handleChange}/>
             </div>
         )

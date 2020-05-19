@@ -7,6 +7,7 @@ export default class GameContainer extends React.Component {
 
     state = {
         listArray: undefined, 
+        letters: [],
         loaded: false,
         round: '1',
         list: 0
@@ -16,10 +17,19 @@ export default class GameContainer extends React.Component {
         fetch('http://localhost:3000/randomlist')
             .then(res => res.json())
             .then(lists=> this.setState({listArray: lists, loaded: true}))
+            
+        let letterArray = []
+        for (let i = 0; i < 3; i++){
+            let randLetter = this.generateRandomLetter()
+            letterArray.push(randLetter)
+        }    
+        this.setState({
+            letters: letterArray
+        })
     }
 
     createRounds = () => {
-        return ['1', '2', '3'].map(num => <Round enabled={this.state.round === num} key={num} roundNumber={num} letter={this.generateRandomLetter()}/>) 
+        return ['1', '2', '3'].map(num => <Round showLetter={parseInt(num) <= parseInt(this.state.round)} enabled={this.state.round === num} key={num} roundNumber={num} letter={this.state.letters[parseInt(num)-1]}/>) 
     }
 
     incrementRound = () => {
