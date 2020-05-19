@@ -8,7 +8,8 @@ export default class GameContainer extends React.Component {
     state = {
         listArray: undefined, 
         loaded: false,
-        round: '1'
+        round: '1',
+        list: 0
     }
 
     componentDidMount(){
@@ -24,7 +25,8 @@ export default class GameContainer extends React.Component {
     incrementRound = () => {
         const newRound = parseInt(this.state.round) + 1
         this.setState({
-            round: newRound.toString()
+            round: newRound.toString(),
+            list: this.state.list + 1
         })
     }
 
@@ -37,7 +39,7 @@ export default class GameContainer extends React.Component {
     render(){
         return(
             <div className='game-container'>
-                <ListView lists={this.state.listArray} loaded={this.state.loaded}/>
+                <ListView list={this.state.loaded && this.state.listArray[this.state.list]} loaded={this.state.loaded}/>
                 {/* sets up three separate rounds */}
                 {this.createRounds()} 
                 <Stopwatch incrementRound={this.incrementRound} initialTime={270000}/>

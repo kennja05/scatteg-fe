@@ -6,9 +6,9 @@ const ListView = (props) => {
         
         props.loaded ? 
         <div className='list-view'>
-            <h1>List: {props.lists[0].number}</h1>
+            <h1>List: {props.list.number}</h1>
             <ul className='categories-list'>
-                {props.lists[0].categories.map((c, index) => <li key={c.id}>{index + 1}) {c.name}</li>)}
+                {props.list.categories.map((c, index) => <li key={c.id}>{index + 1}) {c.name}</li>)}
             </ul>
         </div>
         : 
