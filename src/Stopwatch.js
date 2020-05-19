@@ -8,15 +8,18 @@ export default class Stopwatch extends React.Component {
             <div className='timer'>
                 <Timer 
                     lastUnit={'s'}
-                    initialTime={this.props.initialTime}
+                    //initialTime={this.props.initialTime} - will change it back to this later
+                    initialTime={30000}
                     direction="backward"
                     checkpoints={[
                         {
-                            time: this.props.initialTime - 90000,
+                            time: 20000,
+                            //time: this.props.initialTime - 90000, - will change it back to this later
                             callback: () => this.props.incrementRound(),
                         },
                         {
-                            time: this.props.initialTime - 180000,
+                            time: 10000,
+                            //time: this.props.initialTime - 180000, -- will change it back to this later
                             callback: () => this.props.incrementRound(),
                         },
                         {
