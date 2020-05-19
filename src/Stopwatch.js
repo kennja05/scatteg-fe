@@ -13,12 +13,17 @@ export default class Stopwatch extends React.Component {
                     direction="backward"
                     checkpoints={[
                         {
-                            time: this.props.initialTime - 10000,
+                            time: this.props.initialTime - 90000,
                             callback: () => this.props.incrementRound(),
                         },
                         {
-                            time: this.props.initialTime - 20000,
-                            callback: () => console.log('Checkpoint B'),
+                            time: this.props.initialTime - 180000,
+                            callback: () => this.props.incrementRound(),
+                        },
+                        {
+                            time: 0,
+                            //will want a function that will post the game
+                            callback: () => (console.log('gameOvaaa'))
                         }
                     ]}
                     >
