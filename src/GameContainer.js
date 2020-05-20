@@ -35,13 +35,13 @@ export default class GameContainer extends React.Component {
             body: JSON.stringify(gameObj)
         })
         .then(res => res.json())
-        .then(game => this.setState({gameId: game.id})) //will use this line to place the new game ID into state - hardcoding for now
+        .then(game => this.setState({gameId: game.id}))
     }
 
     createRounds = () => {
         //show letter tells the component to display that rounds letter if we're in the middle of that round or if the round has already been completed
         //enabled ensures that only the form for the current round is editable
-        return ['1', '2', '3'].map(num => <Round showLetter={parseInt(num) <= parseInt(this.state.round)} enabled={this.state.round === num} key={num} roundNumber={num} letter={this.state.letters[parseInt(num)-1]}/>) 
+        return ['1', '2', '3'].map(num => <Round gameId={this.state.gameId} showLetter={parseInt(num) <= parseInt(this.state.round)} enabled={this.state.round === num} key={num} roundNumber={num} letter={this.state.letters[parseInt(num)-1]}/>) 
     }
 
     incrementRound = () => {
@@ -63,7 +63,6 @@ export default class GameContainer extends React.Component {
     }
 
     render(){
-        console.log(this.state.gameId)
         return(
             <div className='game-container'>
                 <ListView list={this.state.loaded && this.state.listArray[this.state.list]} loaded={this.state.loaded}/>

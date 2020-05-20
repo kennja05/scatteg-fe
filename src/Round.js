@@ -25,6 +25,16 @@ export default class Round extends React.Component {
         })
     }
 
+    postRound = () => {
+        fetch('http://localhost:3000/rounds', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(this.state.inputs)
+        })
+    }
+
     render(){
         return(
             <div className='round'>
