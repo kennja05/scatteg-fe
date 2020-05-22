@@ -66,7 +66,6 @@ export default class GameContainer extends React.Component {
         return(
             <div className='game-container'>
                 <ListView list={this.state.loaded && this.state.listArray[this.state.list]} loaded={this.state.loaded}/>
-                {/* sets up three separate rounds */}
                 {this.createRounds()} 
                 {this.state.gameId !== undefined && <Stopwatch incrementRound={this.incrementRound} initialTime={270000}/>}
             </div>

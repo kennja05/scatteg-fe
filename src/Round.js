@@ -2,29 +2,6 @@ import React from 'react'
 import InputForm from './InputForm'
 export default class Round extends React.Component {
 
-    state={
-        inputs: { //there's gotta be a better way...
-            first: '',
-            second: '',
-            third: '',
-            fourth: '',
-            fifth: '',
-            sixth: '',
-            seventh: '',
-            eight: '', 
-            ninth: '',
-            thenth: '',
-            eleventh: '',
-            twelfth: ''
-        }
-    }
-
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-
     postRound = () => {
         fetch('http://localhost:3000/rounds', {
             method: 'POST',
