@@ -3,7 +3,6 @@ import React from 'react'
 export default class InputForm extends React.Component {
 
     state={
-        
             first: '',
             second: '',
             third: '',
@@ -16,13 +15,28 @@ export default class InputForm extends React.Component {
             thenth: '',
             eleventh: '',
             twelfth: ''
-        
+    }
+    
+    componentDidUpdate(prevProps, prevState) {
+
     }
 
     handleChange = (e) => {
         this.setState({
-            
             [e.target.name]: e.target.value
+        })
+    }
+
+    //submit round based on timed events
+    postRound = () => {
+        const {gameId} = this.props
+        const roundObj = {...this.state, gameId: gameId, score: 0}
+        fetch('http://localhost:3000/rounds', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(roundObj)
         })
     }
 
