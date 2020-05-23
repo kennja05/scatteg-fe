@@ -18,7 +18,8 @@ export default class InputForm extends React.Component {
     }
     
     componentDidUpdate(prevProps, prevState) {
-
+        console.log(prevProps.enabled === this.props.enabled) // will use something about this interaction to determine when to post the rounds
+        //will also need to consider when to post roundLists - probably immediately following after posting the round
     }
 
     handleChange = (e) => {
@@ -107,13 +108,6 @@ export default class InputForm extends React.Component {
                     </div>
                 </fieldset>
             </form>
-            
         )
     }
-
-
-
-
-
-
 }

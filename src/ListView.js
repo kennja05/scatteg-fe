@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactLoading from 'react-loading'
 
 const ListView = (props) => {
     
@@ -13,7 +14,7 @@ const ListView = (props) => {
         </div>
         : 
         <div>
-            Loading...
+            <ReactLoading type={'spinningBubbles'} color={'#FF0000'}/>
         </div>
     )
 }
